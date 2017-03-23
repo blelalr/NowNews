@@ -15,6 +15,7 @@
 		504265F11E837CC4001EC76F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504265F01E837CC4001EC76F /* SwiftyJSON.framework */; };
 		504265F31E838180001EC76F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504265F21E838180001EC76F /* Article.swift */; };
 		504265F51E839C76001EC76F /* MyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504265F41E839C76001EC76F /* MyDataSource.swift */; };
+		504265F71E83D57C001EC76F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504265F61E83D57C001EC76F /* DetailViewController.swift */; };
 		E4DA5CBC0F074FE2F17B6481 /* Pods_NowNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2327C984EA0788784EAF464D /* Pods_NowNews.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		504265F01E837CC4001EC76F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/NowNews-gqjcjwmisqxnrkeembruramjfxic/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		504265F21E838180001EC76F /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		504265F41E839C76001EC76F /* MyDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDataSource.swift; sourceTree = "<group>"; };
+		504265F61E83D57C001EC76F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A9C500198CC23E6AAB3AEA2F /* Pods-NowNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NowNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-NowNews/Pods-NowNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 				17ADC2261E80082D008132A2 /* ArticleListViewController.swift */,
 				504265F21E838180001EC76F /* Article.swift */,
 				504265F41E839C76001EC76F /* MyDataSource.swift */,
+				504265F61E83D57C001EC76F /* DetailViewController.swift */,
 			);
 			path = NowNews;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			files = (
 				17ADC2271E80082D008132A2 /* ArticleListViewController.swift in Sources */,
 				17ADC2151E80074E008132A2 /* AppDelegate.swift in Sources */,
+				504265F71E83D57C001EC76F /* DetailViewController.swift in Sources */,
 				504265F51E839C76001EC76F /* MyDataSource.swift in Sources */,
 				504265F31E838180001EC76F /* Article.swift in Sources */,
 			);

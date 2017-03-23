@@ -32,6 +32,7 @@ class ArticleListViewController: UITableViewController {
         super.viewDidLoad()
         articleTableView.dataSource = dataResource
         articleTableView.delegate = self
+        articleTableView.rowHeight = UITableViewAutomaticDimension
         downloadLatestArticles()
     }
     
