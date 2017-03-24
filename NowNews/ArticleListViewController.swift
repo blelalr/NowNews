@@ -66,8 +66,6 @@ class ArticleListViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showArticleDetail"{
-            print("翻頁囉～")
-            
             let cell = sender as! ArticleCell
             let detailVC = segue.destination as! DetailViewController
             
