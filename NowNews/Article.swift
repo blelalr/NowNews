@@ -9,6 +9,8 @@
 import UIKit
 import SwiftyJSON
 
+let ArticlesURL = URL(string: "https://hpd-iosdev.firebaseio.com/news/latest.json")!
+
 class Article {
     
     let heading: String?
@@ -37,5 +39,34 @@ class Article {
         url = URL(string: urlString)!
         
     }
+    
+    class func downloadLatestArticles(completionHandler: @escaping ([Article]?, Error?) -> Void) {
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: ArticlesURL) { data, response, error in
+            if let error = error {
+                print("下載新聞錯誤: \(error)")
+                completionHandler(nil, error)
+                return
+            }
+            
+            if let jsonArray = JSON(data: data!).array {
+//                var articles = [Article]()
+//                for jsonObj in jsonArray {
+//                    let article = Article(rawData: jsonObj)
+//                    articles.append(article)
+//                }
+                
+                let articles = jsonArray.map { Article(rawData: $0) }
+                
+                completionHandler(articles, nil)
+//                self.articles = articles
+//                self.dataResource.articles = articles
+                print("新聞下載完成！！")
+            }
+        }
+        task.resume()
+    }
+
     
 }

@@ -10,11 +10,9 @@ import UIKit
 import SwiftyJSON
 
 class ArticleListViewController: UITableViewController {
-    let ArticlesURL = URL(string: "https://hpd-iosdev.firebaseio.com/news/latest.json")!
+//    let ArticlesURL = URL(string: "https://hpd-iosdev.firebaseio.com/news/latest.json")!
     
     @IBOutlet weak var articleTableView: UITableView!
-    
-    
     var dataResource = MyDataSource()
     var articles = [Article]() {
         didSet {
@@ -36,27 +34,49 @@ class ArticleListViewController: UITableViewController {
         downloadLatestArticles()
     }
     
-    func downloadLatestArticles() {
-        let session = URLSession.shared
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        let task = session.dataTask(with: ArticlesURL) { data, response, error in
+        let newFrame = CGRect(x: 0, y: -navigationController!.navigationBar.frame.height, width: navigationController!.navigationBar.frame.width, height: navigationController!.navigationBar.frame.height)
+        navigationController?.navigationBar.frame = newFrame
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let navigationController = self.navigationController!
+        print("\(navigationController.navigationBar.frame)")
+    }
+    
+    func downloadLatestArticles() {
+        Article.downloadLatestArticles { (articles, error) in
             if let error = error {
-                print("下載新聞錯誤: \(error)")
+                print("下載失敗：\(error)")
                 return
             }
             
-            if let jsonArray = JSON(data: data!).array {
-                var articles = [Article]()
-                for jsonObj in jsonArray {
-                    let article = Article(rawData: jsonObj)
-                    articles.append(article)
-                }
+            if let articles = articles {
                 self.articles = articles
                 self.dataResource.articles = articles
-                print("新聞下載完成！！")
+                self.refreshControl?.endRefreshing()
+
             }
         }
-        task.resume()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showArticleDetail"{
+            print("翻頁囉～")
+            
+            let cell = sender as! ArticleCell
+            let detailVC = segue.destination as! DetailViewController
+            
+            let row = articleTableView.indexPath(for: cell)!.row
+            
+            let article = articles[row]
+            detailVC.article = article
+        
+        }
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -67,12 +87,16 @@ class ArticleListViewController: UITableViewController {
         return UITableViewAutomaticDimension
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if let result = self.dataResource.articles {
-//            print("\(result[indexPath.row])")
-//            drawMap(result: result[indexPath.row])
-//        }
+    @IBAction func reloadNews(_ sender: Any) {
+        downloadLatestArticles()
+        
     }
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if let result = dataResource.articles {
+//            print("\(dataResource.articles[indexPath.row])")
+//        }
+//    }
     
         
 }
