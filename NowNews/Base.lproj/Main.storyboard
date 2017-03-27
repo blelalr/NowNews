@@ -79,7 +79,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ytz-tD-kPM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2sF-zq-1XT">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" misplaced="YES" id="2sF-zq-1XT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -108,35 +108,49 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJY-BX-Zdl" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1102"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1302"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcT-IU-Z3m">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic" translatesAutoresizingMaskIntoConstraints="NO" id="tF5-gU-1qp">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tF5-gU-1qp">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calender Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfv-Cd-mv7" userLabel="update Time">
-                                                        <rect key="frame" x="8" y="8" width="163.5" height="29"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calender Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEj-bn-cNP" userLabel="update Date">
+                                                        <rect key="frame" x="10" y="10" width="163.5" height="29"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfv-Cd-mv7" userLabel="update Time">
+                                                        <rect key="frame" x="10" y="36" width="30" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2b-Ye-JbP">
+                                                        <rect key="frame" x="325" y="10" width="40" height="30"/>
+                                                        <state key="normal" title="Share"/>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="211" id="0zb-e0-3QG"/>
-                                                    <constraint firstItem="tfv-Cd-mv7" firstAttribute="top" secondItem="HcT-IU-Z3m" secondAttribute="top" constant="8" id="Ikl-yx-xDP"/>
+                                                    <constraint firstItem="tfv-Cd-mv7" firstAttribute="top" secondItem="HcT-IU-Z3m" secondAttribute="top" constant="36" id="8ml-gs-TkL"/>
+                                                    <constraint firstItem="tfv-Cd-mv7" firstAttribute="leading" secondItem="HcT-IU-Z3m" secondAttribute="leading" constant="10" id="DZy-82-tON"/>
                                                     <constraint firstAttribute="trailing" secondItem="tF5-gU-1qp" secondAttribute="trailing" id="NV4-D0-PRE"/>
                                                     <constraint firstItem="tF5-gU-1qp" firstAttribute="top" secondItem="HcT-IU-Z3m" secondAttribute="top" id="P3X-6B-gy4"/>
-                                                    <constraint firstItem="tfv-Cd-mv7" firstAttribute="leading" secondItem="HcT-IU-Z3m" secondAttribute="leading" constant="8" id="Rvn-bp-WKr"/>
                                                     <constraint firstAttribute="width" constant="375" id="Uxk-5b-8Vu"/>
+                                                    <constraint firstItem="WEj-bn-cNP" firstAttribute="top" secondItem="HcT-IU-Z3m" secondAttribute="top" constant="10" id="YrQ-s1-vx3"/>
                                                     <constraint firstItem="tF5-gU-1qp" firstAttribute="leading" secondItem="HcT-IU-Z3m" secondAttribute="leading" id="ayL-G1-KTg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="a2b-Ye-JbP" secondAttribute="trailing" constant="10" id="kpY-0y-J3a"/>
                                                     <constraint firstAttribute="bottom" secondItem="tF5-gU-1qp" secondAttribute="bottom" id="pe4-Uu-1El"/>
+                                                    <constraint firstItem="a2b-Ye-JbP" firstAttribute="top" secondItem="HcT-IU-Z3m" secondAttribute="top" constant="10" id="rfo-HJ-LZI"/>
+                                                    <constraint firstItem="WEj-bn-cNP" firstAttribute="leading" secondItem="HcT-IU-Z3m" secondAttribute="leading" constant="10" id="upU-7k-qE2"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="I0Z-9p-flV">
-                                                <rect key="frame" x="8" y="221" width="359" height="881"/>
+                                                <rect key="frame" x="8" y="221" width="359" height="1081"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMi-IN-ayi" userLabel="categaryLabel">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="17"/>
@@ -150,11 +164,17 @@
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdP-jh-vDY">
-                                                        <rect key="frame" x="0.0" y="49" width="359" height="832"/>
-                                                        <string key="text">fjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhr</string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdP-jh-vDY">
+                                                        <rect key="frame" x="0.0" y="49" width="359" height="1032"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment>
+                                                                <mutableString key="content">fjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhrfjreioughoirehgoirewhoighroieghoirehgoirehwioghroiwehgiorwehgoiehhr</mutableString>
+                                                                <attributes>
+                                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -198,7 +218,8 @@
                         <outlet property="heightConstraint" destination="0zb-e0-3QG" id="vBl-VZ-Q5C"/>
                         <outlet property="pic" destination="tF5-gU-1qp" id="001-s7-1s2"/>
                         <outlet property="scrollView" destination="14J-jF-7E2" id="aNp-jc-dLK"/>
-                        <outlet property="updateTime" destination="tfv-Cd-mv7" id="IPA-i0-C3r"/>
+                        <outlet property="updateDate" destination="WEj-bn-cNP" id="m6d-gZ-X5L"/>
+                        <outlet property="updateTime" destination="tfv-Cd-mv7" id="P7o-hS-cfb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tS8-kr-dzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -206,7 +227,4 @@
             <point key="canvasLocation" x="1893.5999999999999" y="-746.17691154422789"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="pic" width="400" height="400"/>
-    </resources>
 </document>

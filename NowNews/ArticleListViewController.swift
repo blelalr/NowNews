@@ -37,15 +37,11 @@ class ArticleListViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let newFrame = CGRect(x: 0, y: -navigationController!.navigationBar.frame.height, width: navigationController!.navigationBar.frame.width, height: navigationController!.navigationBar.frame.height)
-        navigationController?.navigationBar.frame = newFrame
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        let navigationController = self.navigationController!
-        print("\(navigationController.navigationBar.frame)")
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     func downloadLatestArticles() {

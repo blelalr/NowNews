@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		17ADC2151E80074E008132A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ADC2141E80074E008132A2 /* AppDelegate.swift */; };
 		17ADC21A1E80074E008132A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17ADC2181E80074E008132A2 /* Main.storyboard */; };
-		17ADC21C1E80074E008132A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17ADC21B1E80074E008132A2 /* Assets.xcassets */; };
 		17ADC21F1E80074E008132A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17ADC21D1E80074E008132A2 /* LaunchScreen.storyboard */; };
 		17ADC2271E80082D008132A2 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ADC2261E80082D008132A2 /* ArticleListViewController.swift */; };
 		504265F11E837CC4001EC76F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504265F01E837CC4001EC76F /* SwiftyJSON.framework */; };
 		504265F31E838180001EC76F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504265F21E838180001EC76F /* Article.swift */; };
 		504265F51E839C76001EC76F /* MyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504265F41E839C76001EC76F /* MyDataSource.swift */; };
 		504265F71E83D57C001EC76F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504265F61E83D57C001EC76F /* DetailViewController.swift */; };
+		50C708991E88FF9500FF2D94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C708981E88FF9500FF2D94 /* Assets.xcassets */; };
 		E4DA5CBC0F074FE2F17B6481 /* Pods_NowNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2327C984EA0788784EAF464D /* Pods_NowNews.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +23,6 @@
 		17ADC2111E80074E008132A2 /* NowNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NowNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17ADC2141E80074E008132A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17ADC2191E80074E008132A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		17ADC21B1E80074E008132A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17ADC21E1E80074E008132A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17ADC2201E80074E008132A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17ADC2261E80082D008132A2 /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +32,7 @@
 		504265F21E838180001EC76F /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		504265F41E839C76001EC76F /* MyDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDataSource.swift; sourceTree = "<group>"; };
 		504265F61E83D57C001EC76F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		50C708981E88FF9500FF2D94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9C500198CC23E6AAB3AEA2F /* Pods-NowNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NowNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-NowNews/Pods-NowNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,9 +70,9 @@
 		17ADC2131E80074E008132A2 /* NowNews */ = {
 			isa = PBXGroup;
 			children = (
+				50C708981E88FF9500FF2D94 /* Assets.xcassets */,
 				17ADC2141E80074E008132A2 /* AppDelegate.swift */,
 				17ADC2181E80074E008132A2 /* Main.storyboard */,
-				17ADC21B1E80074E008132A2 /* Assets.xcassets */,
 				17ADC21D1E80074E008132A2 /* LaunchScreen.storyboard */,
 				17ADC2201E80074E008132A2 /* Info.plist */,
 				17ADC2261E80082D008132A2 /* ArticleListViewController.swift */,
@@ -165,7 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17ADC21F1E80074E008132A2 /* LaunchScreen.storyboard in Resources */,
-				17ADC21C1E80074E008132A2 /* Assets.xcassets in Resources */,
+				50C708991E88FF9500FF2D94 /* Assets.xcassets in Resources */,
 				17ADC21A1E80074E008132A2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

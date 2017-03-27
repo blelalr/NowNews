@@ -14,6 +14,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     let headerHeight: CGFloat = 221
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var updateDate: UILabel!
     @IBOutlet weak var updateTime: UILabel!
     @IBOutlet weak var pic: UIImageView!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
@@ -23,46 +24,46 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var content: UILabel!
     
     override func viewDidLoad() {
-        print("Article: \(article)")
-        let publishDate = Calendar.current.component(.hour, from: article.publishedDate)
-        print("publishDate: \(publishDate)")
-        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM d"
+        updateDate.text = formatter.string(from: article.publishedDate)
+        formatter.dateFormat = "HH:mm YYYY"
+        updateTime.text = formatter.string(from: article.publishedDate)
+        category.text = article.category
+        header.text = article.heading
+        content.text = article.content
+        downloadArticleImage()
+    }
+
+    //dismiss status bar
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
-        
-        headerView.tag = 1
         scrollView.delegate = self
         scrollView.bounces = true
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.scrollsToTop = false
-        scrollView.bouncesZoom = true
-        
-        // 縮放元件的預設縮放大小
-        scrollView.zoomScale = 1.0
-        
-        // 縮放元件可縮小到的最小倍數
-        scrollView.minimumZoomScale = 0.5
-        
-        // 縮放元件可放大到的最大倍數
-        scrollView.maximumZoomScale = 1.0
-        
-        // 縮放元件縮放時是否在超過縮放倍數後使用彈回效果
+        scrollView.scrollsToTop = true
         scrollView.bouncesZoom = true
         self.heightConstraint.constant = headerHeight
     }
     
     func updateHeaderView() {
-        let moveY = scrollView.contentOffset.y + 64
+        let moveY = scrollView.contentOffset.y
         print("scroll: \(scrollView.contentOffset.y)")
         print("constraint: \(self.heightConstraint.constant)")
-//        if let headerHeight = headerHeight {
-//            let headerRect = CGRect(x: 0, y: moveY , width: headerView.bounds.width, height: headerHeight)
-            if moveY < 0 {
+        
+        if moveY < 0 {
+            if self.heightConstraint.constant < 450{
                 self.heightConstraint.constant =  self.heightConstraint.constant - moveY;
             }
+        }
+        if moveY > 0 {
+            if self.heightConstraint.constant > headerHeight {
+                self.heightConstraint.constant =  self.heightConstraint.constant - moveY;
+            }
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -77,9 +78,23 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         self.heightConstraint.constant =  headerHeight
     }
     
-    // 縮放的元件
-    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
-            return self.headerView.viewWithTag(1)
+    
+    func downloadArticleImage() {
+        if let imageURL = article.imageURL {
+            var imageData = Data()
+            let dataTask = URLSession.shared.dataTask(with: imageURL, completionHandler: { (data, response, error) in
+                if let error = error {
+                    print("Error: \(error)")
+                    return
+                }
+                
+                imageData.append(data!)
+                DispatchQueue.main.async {
+                    self.pic.image = UIImage(data: imageData)
+                }
+            })
+            dataTask.resume()
+        }
     }
     
     
