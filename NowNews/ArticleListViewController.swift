@@ -17,7 +17,7 @@ class ArticleListViewController: UITableViewController {
     var articles = [Article]() {
         didSet {
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self.articleTableView.reloadData()
             }
         }
     }
@@ -32,6 +32,7 @@ class ArticleListViewController: UITableViewController {
         articleTableView.delegate = self
         articleTableView.rowHeight = UITableViewAutomaticDimension
         downloadLatestArticles()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,9 +54,11 @@ class ArticleListViewController: UITableViewController {
             
             if let articles = articles {
                 self.articles = articles
-                self.dataResource.articles = articles
                 self.refreshControl?.endRefreshing()
-
+                self.dataResource.articles = articles
+            }
+            DispatchQueue.main.async {
+                self.articleTableView.reloadData()
             }
         }
     }
@@ -85,12 +88,4 @@ class ArticleListViewController: UITableViewController {
         downloadLatestArticles()
         
     }
-    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if let result = dataResource.articles {
-//            print("\(dataResource.articles[indexPath.row])")
-//        }
-//    }
-    
-        
 }
