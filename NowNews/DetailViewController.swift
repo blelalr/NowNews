@@ -24,9 +24,20 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var content: UILabel!
     @IBOutlet weak var shareBtn: UIButton!
     
-    @IBAction func Share(_ sender: Any) {
+    @IBAction func Share(_ sender: UIView) {
+        let textToShare = article.heading
+        let myWebsite = article.url
         
+        let objectsToShare = [textToShare as Any, myWebsite] as [Any]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        DispatchQueue.main.async {
+            activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
+        
+            activityVC.popoverPresentationController?.sourceView = sender
+            self.present(activityVC, animated: true, completion: nil)
+        }
     }
+    
     override func viewDidLoad() {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM d"
