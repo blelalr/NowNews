@@ -11,7 +11,7 @@ import UIKit
 class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     var article: Article!
-    let headerHeight: CGFloat = 250
+    let headerHeight: CGFloat = 300
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var updateDate: UILabel!
